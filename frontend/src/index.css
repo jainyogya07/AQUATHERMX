@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #00e0ff; /* Cyan/Aqua */
+  --color-secondary: #ff3366; /* Hot Pink/Heat */
+  --color-bg-dark: #0f172a;
+  --color-panel: rgba(30, 41, 59, 0.7);
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: white;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden; /* App-like feel */
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--color-panel);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+}
+
+.map-container {
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e293b; 
+}
+::-webkit-scrollbar-thumb {
+  background: #475569; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b; 
+}
