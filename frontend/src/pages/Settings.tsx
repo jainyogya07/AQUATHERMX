@@ -34,7 +34,7 @@ export default function Settings() {
                     <div className="bg-[#0B1221] p-6 rounded-2xl border border-white/5 flex items-center justify-between">
                         <div>
                             <h3 className="font-bold">Real-time Notifications</h3>
-                            <p className="text-sm text-gray-400">Receive alerts when heat index > 7.0</p>
+                            <p className="text-sm text-gray-400">Receive alerts when heat index &gt; 7.0</p>
                         </div>
                         <button onClick={() => setNotifications(!notifications)} className="text-cyan-500">
                             {notifications ? <ToggleRight size={40} /> : <ToggleLeft size={40} className="text-gray-600" />}
