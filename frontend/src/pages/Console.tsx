@@ -90,10 +90,10 @@ export default function Console() {
     };
 
     return (
-        <div className="h-screen w-screen bg-[#050B14] text-white overflow-hidden p-4 font-sans selection:bg-cyan-500/30">
+        <div className="min-h-screen w-screen bg-[#050B14] text-white overflow-y-auto md:overflow-hidden p-4 font-sans selection:bg-cyan-500/30">
 
             {/* GLOBAL HEADER */}
-            <header className="h-14 flex items-center justify-between mb-4">
+            <header className="h-auto md:h-14 flex flex-col md:flex-row items-start md:items-center justify-between mb-6 md:mb-4 gap-4">
                 <div className="flex items-center gap-4">
                     <div className="bg-gradient-to-br from-cyan-600 to-blue-700 w-10 h-10 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-900/40 border border-white/10">
                         <Activity className="text-white w-6 h-6" />
@@ -106,7 +106,7 @@ export default function Console() {
                     </div>
                 </div>
 
-                <div className="flex items-center gap-6 px-6 py-2 bg-gray-900/50 rounded-full border border-white/5 backdrop-blur-md">
+                <div className="flex items-center gap-6 px-6 py-2 bg-gray-900/50 rounded-full border border-white/5 backdrop-blur-md w-full md:w-auto justify-between md:justify-start">
                     <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></div>
                         <span className="text-xs text-gray-400 font-medium">System Operational</span>
@@ -117,10 +117,10 @@ export default function Console() {
             </header>
 
             {/* BENTO GRID LAYOUT */}
-            <div className="grid grid-cols-12 gap-4 h-[calc(100vh-6rem)]">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-auto md:h-[calc(100vh-6rem)]">
 
                 {/* COL 1-3: CONTROL DECK */}
-                <div className="col-span-3 flex flex-col gap-4">
+                <div className="col-span-1 md:col-span-3 flex flex-col gap-4 order-2 md:order-1">
                     {/* Source Card */}
                     <div className="bg-[#0B1221] border border-white/5 rounded-2xl p-6 shadow-xl flex-1 flex flex-col relative overflow-hidden group">
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -186,7 +186,7 @@ export default function Console() {
                 </div>
 
                 {/* COL 4-9: SPATIAL CORE (MAP) */}
-                <div className="col-span-6 bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+                <div className="col-span-1 md:col-span-6 bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative order-1 md:order-2 h-[50vh] md:h-auto">
                     <div className="absolute top-4 left-4 z-[400] bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
                         <span className="text-[10px] text-gray-400 font-mono uppercase">Optical Feed // Sentinel-2 L2A</span>
                     </div>
@@ -196,15 +196,15 @@ export default function Console() {
                     {result && (
                         <div className="absolute bottom-4 left-4 right-4 z-[400] grid grid-cols-3 gap-2">
                             <div className="bg-black/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex flex-col items-center">
-                                <span className="text-[10px] text-gray-500 uppercase">Detection Count</span>
+                                <span className="text-[10px] text-gray-500 uppercase">Count</span>
                                 <span className="text-xl font-mono font-bold text-white">{result.plastic_analysis.count}</span>
                             </div>
                             <div className="bg-black/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex flex-col items-center">
-                                <span className="text-[10px] text-gray-500 uppercase">Surface Temp</span>
+                                <span className="text-[10px] text-gray-500 uppercase">Temp</span>
                                 <span className="text-xl font-mono font-bold text-orange-400">{result.environmental_data.surface_temp_c}°C</span>
                             </div>
                             <div className="bg-black/80 backdrop-blur-md p-3 rounded-xl border border-white/10 flex flex-col items-center">
-                                <span className="text-[10px] text-gray-500 uppercase">Population</span>
+                                <span className="text-[10px] text-gray-500 uppercase">Pop.</span>
                                 <span className="text-xl font-mono font-bold text-emerald-400">{result.environmental_data.population_density}</span>
                             </div>
                         </div>
@@ -212,7 +212,7 @@ export default function Console() {
                 </div>
 
                 {/* COL 10-12: INTELLIGENCE DECK */}
-                <div className="col-span-3 flex flex-col gap-4 overflow-y-auto">
+                <div className="col-span-1 md:col-span-3 flex flex-col gap-4 overflow-y-visible md:overflow-y-auto order-3">
 
                     {/* 1. Main Score Card */}
                     <div className="bg-[#0B1221] border border-white/5 rounded-2xl p-6 shadow-xl shrink-0">

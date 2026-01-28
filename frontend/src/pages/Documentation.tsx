@@ -5,7 +5,7 @@ export default function Documentation() {
     const navigate = useNavigate();
 
     return (
-        <div className="min-h-screen bg-[#050B14] text-white p-8 font-sans">
+        <div className="min-h-screen bg-[#050B14] text-white p-4 md:p-8 font-sans">
             <button
                 onClick={() => navigate('/')}
                 className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors mb-8"
