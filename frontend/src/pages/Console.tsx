@@ -60,7 +60,14 @@ export default function Console() {
             const controller = new AbortController();
             const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout
 
-            const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+            let envUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+            // Safety: Ensure it ends with /api to avoid 404s if user forgot suffix
+            if (!envUrl.endsWith('/api')) {
+                envUrl = `${envUrl}/api`;
+            }
+            // Remove double slashes if any (edge case)
+            const apiUrl = envUrl.replace(/([^:]\/)\/+/g, "$1");
+
             const response = await fetch(`${apiUrl}/analyze/`, {
                 method: 'POST',
                 body: formData,
