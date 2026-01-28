@@ -90,7 +90,7 @@ export default function Console() {
     };
 
     return (
-        <div className="min-h-screen w-screen bg-[#050B14] text-white overflow-y-auto md:overflow-hidden p-4 font-sans selection:bg-cyan-500/30">
+        <div className="min-h-screen w-full max-w-[100vw] bg-[#050B14] text-white overflow-x-hidden overflow-y-auto md:overflow-hidden p-4 font-sans selection:bg-cyan-500/30">
 
             {/* GLOBAL HEADER */}
             <header className="h-auto md:h-14 flex flex-col md:flex-row items-start md:items-center justify-between mb-6 md:mb-4 gap-4">

@@ -4,7 +4,7 @@ import { Activity, LayoutGrid, FileText, Settings, ArrowRight } from 'lucide-rea
 
 export default function Home() {
     return (
-        <div className="min-h-screen w-full bg-[#050B14] text-white flex flex-col items-center justify-center p-8 font-sans selection:bg-cyan-500/30 relative overflow-hidden">
+        <div className="min-h-screen w-full max-w-[100vw] bg-[#050B14] text-white flex flex-col items-center justify-center p-8 font-sans selection:bg-cyan-500/30 relative overflow-x-hidden">
 
             {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
