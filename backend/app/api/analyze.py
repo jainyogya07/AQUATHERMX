@@ -8,7 +8,7 @@ from app.domain.region import Region
 router = APIRouter()
 
 @router.post("/")
-async def analyze_image(
+def analyze_image(
     file: UploadFile = File(None), 
     lat: float = Form(0.0), 
     lng: float = Form(0.0), 
@@ -26,7 +26,7 @@ async def analyze_image(
         if file:
             if not file.content_type.startswith("image/"):
                 raise HTTPException(status_code=400, detail="File must be an image")
-            contents = await file.read()
+            contents = file.file.read()
             image = Image.open(io.BytesIO(contents)).convert("RGB")
         elif not use_satellite:
              raise HTTPException(status_code=400, detail="Must provide file or enable use_satellite")

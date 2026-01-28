@@ -57,17 +57,26 @@ export default function Console() {
         formData.append('lng', center[1].toString());
 
         try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 60000); // 60s timeout
+
             const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
             const response = await fetch(`${apiUrl}/analyze/`, {
                 method: 'POST',
                 body: formData,
+                signal: controller.signal
             });
+            clearTimeout(timeoutId);
             const data = await response.json();
             if (!response.ok) throw new Error(data.detail);
             setResult({ ...data, is_simulation: isSimulation });
-        } catch (error) {
+        } catch (error: any) {
             console.error("Analysis failed:", error);
-            alert("Analysis failed. See console.");
+            if (error.name === 'AbortError') {
+                alert("Request timed out. The server might be waking up (Cold Start). Please try again in 30 seconds.");
+            } else {
+                alert(`Analysis failed: ${error.message}`);
+            }
         } finally {
             setIsLoading(false);
         }
