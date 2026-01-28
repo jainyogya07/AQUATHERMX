@@ -6,3 +6,4 @@ numpy
 ultralytics
 requests
 pydantic
+opencv-python-headless
