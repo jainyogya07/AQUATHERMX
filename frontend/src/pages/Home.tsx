@@ -44,29 +44,31 @@ export default function Home() {
                         </span>
                     </Link>
 
-                    {/* Documentation Card (Future) */}
-                    <div className="group relative bg-[#0B1221] border border-white/5 rounded-2xl p-8 transition-all opacity-50 cursor-not-allowed flex flex-col items-center text-center grayscale">
-                        <div className="mb-6 p-4 bg-gray-800 rounded-full text-gray-500">
+                    {/* Documentation Card (Active) */}
+                    <Link to="/documentation" className="group relative bg-[#0B1221] border border-white/5 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-900/10 flex flex-col items-center text-center">
+                        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="mb-6 p-4 bg-gray-800 rounded-full text-gray-500 group-hover:bg-cyan-900/20 group-hover:text-cyan-400 transition-colors">
                             <FileText size={32} />
                         </div>
-                        <h3 className="text-xl font-bold text-gray-400 mb-2">Documentation</h3>
-                        <p className="text-sm text-gray-600 mb-6">Technical specifications, API reference, and methodology reports.</p>
-                        <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-700">
-                            Coming Soon
+                        <h3 className="text-xl font-bold text-gray-400 mb-2 group-hover:text-white transition-colors">Documentation</h3>
+                        <p className="text-sm text-gray-600 mb-6 group-hover:text-gray-500 transition-colors">Technical specifications, API reference, and methodology reports.</p>
+                        <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-700 group-hover:text-cyan-600 transition-colors">
+                            Read Docs <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                         </span>
-                    </div>
+                    </Link>
 
-                    {/* Settings Card (Future) */}
-                    <div className="group relative bg-[#0B1221] border border-white/5 rounded-2xl p-8 transition-all opacity-50 cursor-not-allowed flex flex-col items-center text-center grayscale">
-                        <div className="mb-6 p-4 bg-gray-800 rounded-full text-gray-500">
+                    {/* Settings Card (Active) */}
+                    <Link to="/settings" className="group relative bg-[#0B1221] border border-white/5 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-900/10 flex flex-col items-center text-center">
+                        <div className="absolute inset-0 bg-gradient-to-b from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="mb-6 p-4 bg-gray-800 rounded-full text-gray-500 group-hover:bg-cyan-900/20 group-hover:text-cyan-400 transition-colors">
                             <Settings size={32} />
                         </div>
-                        <h3 className="text-xl font-bold text-gray-400 mb-2">Settings</h3>
-                        <p className="text-sm text-gray-600 mb-6">System configuration, API keys, and user preferences.</p>
-                        <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-700">
-                            Restricted
+                        <h3 className="text-xl font-bold text-gray-400 mb-2 group-hover:text-white transition-colors">Settings</h3>
+                        <p className="text-sm text-gray-600 mb-6 group-hover:text-gray-500 transition-colors">System configuration, API keys, and user preferences.</p>
+                        <span className="mt-auto inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gray-700 group-hover:text-cyan-600 transition-colors">
+                            Configure <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                         </span>
-                    </div>
+                    </Link>
 
                 </div>
 
