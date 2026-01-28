@@ -3,17 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #00e0ff; /* Cyan/Aqua */
-  --color-secondary: #ff3366; /* Hot Pink/Heat */
+  --color-primary: #00e0ff;
+  /* Cyan/Aqua */
+  --color-secondary: #ff3366;
+  /* Hot Pink/Heat */
   --color-bg-dark: #0f172a;
   --color-panel: rgba(30, 41, 59, 0.7);
 }
 
-body {
-  background-color: var(--color-bg-dark);
-  color: white;
-  font-family: 'Inter', system-ui, sans-serif;
-  overflow: hidden; /* App-like feel */
+background-color: var(--color-bg-dark);
+color: white;
+font-family: 'Inter',
+system-ui,
+sans-serif;
+overflow-x: hidden;
+/* Prevent horizontal scroll only */
 }
 
 /* Glassmorphism Utilities */
@@ -35,13 +39,16 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  background: #1e293b; 
+  background: #1e293b;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #475569; 
+  background: #475569;
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #64748b; 
+  background: #64748b;
 }
