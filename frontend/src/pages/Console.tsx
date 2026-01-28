@@ -120,7 +120,7 @@ export default function Console() {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-auto md:h-[calc(100vh-6rem)]">
 
                 {/* COL 1-3: CONTROL DECK */}
-                <div className="col-span-1 md:col-span-3 flex flex-col gap-4 order-2 md:order-1">
+                <div className="col-span-1 md:col-span-3 flex flex-col gap-4 order-1">
                     {/* Source Card */}
                     <div className="bg-[#0B1221] border border-white/5 rounded-2xl p-6 shadow-xl flex-1 flex flex-col relative overflow-hidden group">
                         <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
@@ -186,7 +186,7 @@ export default function Console() {
                 </div>
 
                 {/* COL 4-9: SPATIAL CORE (MAP) */}
-                <div className="col-span-1 md:col-span-6 bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative order-1 md:order-2 h-[50vh] md:h-auto">
+                <div className="col-span-1 md:col-span-6 bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative order-2 min-h-[40vh] md:h-auto">
                     <div className="absolute top-4 left-4 z-[400] bg-black/80 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10">
                         <span className="text-[10px] text-gray-400 font-mono uppercase">Optical Feed // Sentinel-2 L2A</span>
                     </div>
